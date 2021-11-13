@@ -1,0 +1,12 @@
+cuda 可以分为3种：
+最外层的 driver cuda 在安装驱动的时候就自动安装了驱动支持的最高版本（因为driver cuda必须比下面的两个cuda版本要高）
+中间层的 runtime cuda 就是我们官网下载安装的cuda（最重要的就是在安装的过程中不要安装驱动） ，是完整的cudatoolkit，也需要比下面cuda的版本高
+conda 的cudatoolkit 在安装pytorch的时候安装的 ，只有一些与python相关的动态链接库，如果你的代码里面之后python那么大概率够用了，如果你的代码里面需要c编译，那么就需要用到runtime cuda了
+
+一个电脑上安装不同版本cuda，并且任意切换的方法（一定要保证/下面的空间充足 最好100G往上）
+1.下载一个cuda,正常无驱动安装，会自动生成一个cuda软连接，加入cudnn
+2.将环境变量都指向软连接的cuda
+3.下载第二个cuda,无驱动无软连接安装,加入cudnn
+4.将软连接引导新的cuda上
+https://www.pianshen.com/article/1841103936/
+

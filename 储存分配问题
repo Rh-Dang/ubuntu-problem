@@ -1,0 +1,8 @@
+一开始按照网上的教程储存分配是 /tmp 5G, / 30G, /boot 200M, swap 16G, /home 140G
+之后在安装多个版本cuda的时候发现 / 下面的储存空间不够了（因为一个cuda11.1就得站10G左右），甚至导致开机黑屏 ，解决办法就是进入ubuntu高级选项，选择最后一个recover 然后点network,再点root
+之后就是删除/usr/local下面的cuda文件了。https://www.cxyzjd.com/article/weixin_36340979/108178137
+那么如何解决这个问题呢？
+因为ubuntu支持访问windows下面的储存空间了（直接运行home下面的py文件也行），所以/home就没有用了。以后只需要用下面的储存分配就行了
+swap 16G,  /boot 1G,  / 剩下的所有空间  （注意这些都是在固态硬盘上创建的空间） 
+如果已经分了/home怎么办呢？
+先将/home的文件备份到
